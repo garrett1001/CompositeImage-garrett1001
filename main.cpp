@@ -1,4 +1,5 @@
 #include <vector>
+#include <fstream>
 #include <string>
 #include <iostream>
 #include "bitmap.h"
