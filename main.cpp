@@ -26,15 +26,15 @@ vector <vector<vector <Pixel> > > getImages()
 
 	stop = false;
 
-	while(stop == false);
+	while (stop == false);
 	{
 		cin >> imageName;
 
-		if(imageName == "DONE" || imageNumber == 10)
+		if (imageName == "DONE" || imageNumber == 10)
 		{
 			stop = true;
 		}
-		if(imageName == "DONE" && imageNumber < 2)
+		if (imageName == "DONE" && imageNumber < 2)
 		{
 			cout << "composite image cannot be created" << endl;
 		}
@@ -44,7 +44,7 @@ vector <vector<vector <Pixel> > > getImages()
 
 			bool validBmp = image.isImage();
 
-			if(validBmp == true)
+			if (validBmp == true)
 			{
 				bmp = image.toPixelMatrix();
 
@@ -86,20 +86,20 @@ vector <vector<vector <Pixel> > > getImages()
 				cout << "file doesn't exist or isn't a valid bitmap. Try again" << endl;
 			}
 		}
-
-		return combo;
+	}
+	return combo;
 }
 
 
-	
+
 int main()
 {
 	cout << "Enter the names of the files you want to use to create a composite" << endl;
 	combo = getImages();
 
 	cout << combo[2][9][8] << endl;
-  
- 
-  
- return 0;
-} 
+
+
+
+	return 0;
+}
