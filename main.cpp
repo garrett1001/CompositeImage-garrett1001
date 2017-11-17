@@ -11,19 +11,6 @@ vector <vector <Pixel> > bmp;
 vector <vector <vector <Pixel> > > combo;
 Pixel rgb;
 
-int main()
-{
-	cout << "Enter the names of the files you want to use to create a composite" << endl;
-	combo = getImages();
-
-	cout << combo[2][9][8] << endl;
-  
- 
-  
- return 0;
-} 
-
-
 vector <vector<vector <Pixel> > > getImages()
 {
 	string imageName;
@@ -102,3 +89,17 @@ vector <vector<vector <Pixel> > > getImages()
 
 		return combo;
 }
+
+
+	
+int main()
+{
+	cout << "Enter the names of the files you want to use to create a composite" << endl;
+	combo = getImages();
+
+	cout << combo[2][9][8] << endl;
+  
+ 
+  
+ return 0;
+} 
