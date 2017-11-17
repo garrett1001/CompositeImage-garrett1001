@@ -13,6 +13,7 @@ Pixel rgb;
 
 vector <vector<vector <Pixel> > > getImages()
 {
+	vector <vector <vector <Pixel> > > comboTest;
 	string imageName;
 	int imageNumber;
 	bool stop;
@@ -57,7 +58,7 @@ vector <vector<vector <Pixel> > > getImages()
 					{
 						for (k = 0; k < col; k++)
 						{
-							combo[imageNumber][j][k] = bmp[j][k];
+							comboTest[imageNumber][j][k] = bmp[j][k];
 
 							imageNumber++;
 						}
@@ -69,7 +70,7 @@ vector <vector<vector <Pixel> > > getImages()
 					{
 						for (k = 0; k < col; k++)
 						{
-							combo[imageNumber][j][k] = bmp[j][k];
+							comboTest[imageNumber][j][k] = bmp[j][k];
 
 							imageNumber++;
 						}
@@ -87,7 +88,7 @@ vector <vector<vector <Pixel> > > getImages()
 			}
 		}
 	}
-	return combo;
+		return comboTest;
 }
 
 
@@ -97,8 +98,7 @@ int main()
 	cout << "Enter the names of the files you want to use to create a composite" << endl;
 	combo = getImages();
 
-	cout << combo[2][9][8] << endl;
-
+		
 
 
 	return 0;
