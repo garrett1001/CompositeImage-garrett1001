@@ -14,7 +14,6 @@ Pixel fRgb;
 
 vector <vector <vector <Pixel> > > getImages()
 {
-	vector <vector <vector <Pixel> > > comboTest
 	string imageName;
 	int imageNumber;
 	bool stop;
@@ -59,7 +58,7 @@ vector <vector <vector <Pixel> > > getImages()
 					{
 						for (k = 0; k < col; k++)
 						{
-							comboTest[imageNumber][j][k] = bmp[j][k];
+							combo[imageNumber][j][k] = bmp[j][k];
 
 							imageNumber++;
 						}
@@ -71,7 +70,7 @@ vector <vector <vector <Pixel> > > getImages()
 					{
 						for (k = 0; k < col; k++)
 						{
-							comboTest[imageNumber][j][k] = bmp[j][k];
+							combo[imageNumber][j][k] = bmp[j][k];
 
 							imageNumber++;
 						}
@@ -89,7 +88,7 @@ vector <vector <vector <Pixel> > > getImages()
 			}
 		}
 	}
-		return comboTest;
+		return combo;
 }
 
 vector <vector <Pixel> > createComp(vector <vector <vector <Pixel> > > a)
@@ -107,21 +106,26 @@ vector <vector <Pixel> > createComp(vector <vector <vector <Pixel> > > a)
 				fRgb.blue = 0;
 				
 				fRgb.red = fRgb.red + (rgb.red / a[0][0].size());
-				fRgb.green = frgb.green + (rgb.red / a[0][0].size());  //need to fix
-				fRgb.blue = frgb.blue + (rgb.red / a[0][0].size());		
+				fRgb.green = fRgb.green + (rgb.green / a[0][0].size());
+				fRgb.blue = fRgb.blue + (rgb.blue / a[0][0].size());		
 			}
-			bmp[j][k] = rgb;
+			bmp[j][k] = fRgb;
 		}
 	}
+	return bmp;
 }
 
 int main()
 {
 	cout << "Enter the names of the files you want to use to create a composite" << endl;
+	
 	combo = getImages();
 	
+	bmp = createComp(combo);
 
-	createComp(combo);
+	image.fromPixelMatrix(bmp);
+    	image.save("composite-gwelton.bmp");
+
 
 
 	return 0;
