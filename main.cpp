@@ -10,8 +10,9 @@ Bitmap image;
 vector <vector <Pixel> > bmp;
 vector <vector <vector <Pixel> > > combo;
 Pixel rgb;
+Pixwl fRgb
 
-vector <vector<vector <Pixel> > > getImages()
+vector <vector <vector <Pixel> > > getImages()
 {
 	vector <vector <vector <Pixel> > > comboTest
 	string imageName;
@@ -93,21 +94,23 @@ vector <vector<vector <Pixel> > > getImages()
 
 vector <vector <Pixel> > createComp(vector <vector <vector <Pixel> > > a)
 {
-	for (int i = 0; i < a[0][0].size(); i++)
+	for (int j = 0; j < a[0].size(); j++)
 	{
-		for (int j = 0; j < a[0].size(); j++)
+		for (int k = 0; k < a.size(); k++)
 		{
-			for (int k = 0; k < a.size(); k++)
+			for (int i = 0; i < a[0][0].size(); i++)
 			{
 				rgb = a[i][j][k];
 					
-				rgb.red = rgb.red / a[0][0].size();
-				rgb.green = rgb.green / a[0][0].size();  //need to fix
-				rgb.blue = rgb.blue / a[0][0].size();
-
-				bmp[j][k] = rgb
-					
+				fRgb.red = 0;
+				fRgb.green = 0;
+				fRgb.blue = 0;
+				
+				fRgb.red = fRgb.red + (rgb.red / a[0][0].size());
+				fRgb.green = frgb.green + (rgb.red / a[0][0].size());  //need to fix
+				fRgb.blue = frgb.blue + (rgb.red / a[0][0].size());		
 			}
+			bmp[j][k] = rgb;
 		}
 	}
 }
