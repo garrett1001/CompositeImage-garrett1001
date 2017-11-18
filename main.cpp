@@ -13,7 +13,7 @@ Pixel rgb;
 
 vector <vector<vector <Pixel> > > getImages()
 {
-	vector <vector <vector <Pixel> > > comboTest;
+	vector <vector <vector <Pixel> > > comboTest
 	string imageName;
 	int imageNumber;
 	bool stop;
@@ -91,14 +91,34 @@ vector <vector<vector <Pixel> > > getImages()
 		return comboTest;
 }
 
+vector <vector <Pixel> > createComp(vector <vector <vector <Pixel> > > a)
+{
+	for (int i = 0; i < a[0][0].size(); i++)
+	{
+		for (int j = 0; j < a[0].size(); j++)
+		{
+			for (int k = 0; k < a.size(); k++)
+			{
+				rgb = a[i][j][k];
+					
+				rgb.red = rgb.red / a[0][0].size();
+				rgb.green = rgb.green / a[0][0].size();  //need to fix
+				rgb.blue = rgb.blue / a[0][0].size();
 
+				bmp[j][k] = rgb
+					
+			}
+		}
+	}
+}
 
 int main()
 {
 	cout << "Enter the names of the files you want to use to create a composite" << endl;
 	combo = getImages();
+	
 
-		
+	createComp(combo);
 
 
 	return 0;
