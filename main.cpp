@@ -10,7 +10,7 @@ Bitmap image;
 vector <vector <Pixel> > bmp;
 vector <vector <vector <Pixel> > > combo;
 Pixel rgb;
-Pixwl fRgb
+Pixel fRgb;
 
 vector <vector <vector <Pixel> > > getImages()
 {
