@@ -27,15 +27,15 @@ vector <vector <vector <Pixel> > > getImages()
 
 	stop = false;
 
-	while (stop == false);
+	while(stop == false);
 	{
 		cin >> imageName;
 
-		if (imageName == "DONE" || imageNumber == 10)
+		if(imageName == "DONE" || imageNumber == 10)
 		{
 			stop = true;
 		}
-		if (imageName == "DONE" && imageNumber < 2)
+		if(imageName == "DONE" && imageNumber < 2)
 		{
 			cout << "composite image cannot be created" << endl;
 		}
@@ -49,14 +49,14 @@ vector <vector <vector <Pixel> > > getImages()
 			{
 				bmp = image.toPixelMatrix();
 
-				if (row == 0)
+				if(row == 0)
 				{
 					row = bmp.size();
 					col = bmp[0].size();
 
-					for (j = 0; j < row; j++)
+					for(j = 0; j < row; j++)
 					{
-						for (k = 0; k < col; k++)
+						for(k = 0; k < col; k++)
 						{
 							combo[imageNumber][j][k] = bmp[j][k];
 
@@ -64,11 +64,11 @@ vector <vector <vector <Pixel> > > getImages()
 						}
 					}
 				}
-				if (row == bmp.size() && col == bmp[0].size())
+				if(row == bmp.size() && col == bmp[0].size())
 				{
-					for (j = 0; j < row; j++)
+					for(j = 0; j < row; j++)
 					{
-						for (k = 0; k < col; k++)
+						for(k = 0; k < col; k++)
 						{
 							combo[imageNumber][j][k] = bmp[j][k];
 
@@ -93,11 +93,11 @@ vector <vector <vector <Pixel> > > getImages()
 
 vector <vector <Pixel> > createComp(vector <vector <vector <Pixel> > > a)
 {
-	for (int j = 0; j < a[0].size(); j++)
+	for(int j = 0; j < a[0].size(); j++)
 	{
-		for (int k = 0; k < a.size(); k++)
+		for(int k = 0; k < a.size(); k++)
 		{
-			for (int i = 0; i < a[0][0].size(); i++)
+			for(int i = 0; i < a[0][0].size(); i++)
 			{
 				rgb = a[i][j][k];
 					
